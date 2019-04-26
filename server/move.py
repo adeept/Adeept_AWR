@@ -15,19 +15,19 @@ import RPi.GPIO as GPIO
 Motor_A_EN    = 7
 Motor_B_EN    = 11
 
-Motor_A_Pin1  = 8
-Motor_A_Pin2  = 10
+Motor_A_Pin1  = 37
+Motor_A_Pin2  = 40
 Motor_B_Pin1  = 13
 Motor_B_Pin2  = 12
 
-Dir_forward   = 1
-Dir_backward  = 0
+Dir_forward   = 0
+Dir_backward  = 1
 
 left_forward  = 1
 left_backward = 0
 
-right_forward = 1
-right_backward= 0
+right_forward = 0
+right_backward= 1
 
 pwn_A = 0
 pwm_B = 0

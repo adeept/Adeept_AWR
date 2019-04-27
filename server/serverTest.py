@@ -204,12 +204,12 @@ def run():
             move.move(speed_set, direction_command, turn_command, rad)
 
         elif 'headup' == data:
-            servo.camera_ang('lookup')
+            servo.camera_ang('lookup', 'no')
         elif 'headdown' == data:
-            servo.camera_ang('lookdown')
+            servo.camera_ang('lookdown', 'no')
         elif 'headhome' == data:
-            servo.camera_ang('home')
-            time.sleep(0.5)
+            servo.camera_ang('home', 'no')
+            time.sleep(0.2)
             servo.clean_all()
 
         elif 'wsR' in data:

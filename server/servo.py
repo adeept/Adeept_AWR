@@ -36,23 +36,25 @@ def ctrl_range(raw, max_genout, min_genout):
 	return int(raw_output)
 
 
-def camera_ang(direction):
+def camera_ang(direction, ang):
 	global org_pos
+	if ang == 'no':
+		ang = 50
 	if look_direction:
 		if direction == 'lookdown':
-			org_pos+=50
+			org_pos+=ang
 			org_pos = ctrl_range(org_pos, look_max, look_min)
 		elif direction == 'lookup':
-			org_pos-=50
+			org_pos-=ang
 			org_pos = ctrl_range(org_pos, look_max, look_min)
 		elif direction == 'home':
 			org_pos = 300
 	else:
 		if direction == 'lookdown':
-			org_pos-=50
+			org_pos-=ang
 			org_pos = ctrl_range(org_pos, look_max, look_min)
 		elif direction == 'lookup':
-			org_pos+=50
+			org_pos+=ang
 			org_pos = ctrl_range(org_pos, look_max, look_min)
 		elif direction == 'home':
 			org_pos = 300	

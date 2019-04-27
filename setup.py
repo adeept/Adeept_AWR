@@ -8,6 +8,7 @@
 
 import os
 import sys
+import time
 
 
 def search(path,name):
@@ -137,10 +138,12 @@ for x in range(1,4):
 try:
 	try:
 		os.system('sudo rm -rf //home/pi/.config/autostart')
+		time.sleep(0.2)
 	except:
 		pass
 	os.system('sudo mkdir //home/pi/.config/autostart')
 	os.system('sudo touch //home/pi/.config/autostart/car.desktop')
+	time.sleep(0.2)
 	with open("//home/pi/.config/autostart/car.desktop",'w') as file_to_write:
 		file_to_write.write("[Desktop Entry]\n   Name=Car\n   Comment=Car\n   Exec=sudo python3 %sserver.py\n   Icon=false\n   Terminal=false\n   MutipleArgs=false\n   Type=Application\n   Catagories=Application;Development;\n   StartupNotify=true"%path_get)
 except:

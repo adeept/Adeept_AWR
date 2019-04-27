@@ -131,6 +131,11 @@ try:
 except:
 	pass
 
+try:
+	os.system("cd //home/pi/create_ap && sudo make install")
+except:
+	pass
+
 for x in range(1,4):
 	if os.system("sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
 		break
@@ -148,6 +153,7 @@ try:
 		file_to_write.write("[Desktop Entry]\n   Name=Car\n   Comment=Car\n   Exec=sudo python3 %sserver.py\n   Icon=false\n   Terminal=false\n   MutipleArgs=false\n   Type=Application\n   Catagories=Application;Development;\n   StartupNotify=true"%path_get)
 except:
 	pass
+time.sleep(0.3)
 
 print('restarting')
 

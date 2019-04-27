@@ -209,41 +209,14 @@ def run():
             turn_command = 'no'
             move.move(speed_set, direction_command, turn_command, rad)
 
-        elif 'out' == data:
-            if pos_input < 17:
-                pos_input+=1
-            servo.hand_pos(pos_input)
-        elif 'in' == data:
-            if pos_input > 1:
-                pos_input-=1
-            servo.hand_pos(pos_input)
-
         elif 'headup' == data:
-            servo.camera_ang('lookup',0)
+            servo.camera_ang('lookup')
         elif 'headdown' == data:
-            servo.camera_ang('lookdown',0)
+            servo.camera_ang('lookdown')
         elif 'headhome' == data:
-            servo.camera_ang('home',0)
+            servo.camera_ang('home')
             time.sleep(0.2)
             servo.clean_all()
-
-        elif 'c_left' == data:
-            if cir_input < 12:
-                cir_input+=1
-            servo.cir_pos(cir_input)
-        elif 'c_right' == data:
-            if cir_input > 1:
-                cir_input-=1
-            servo.cir_pos(cir_input)
-
-        elif 'catch' == data:
-            if catch_input < 13:
-                catch_input+=1
-            servo.catch(catch_input)
-        elif 'loose' == data:
-            if catch_input > 1:
-                catch_input-=1
-            servo.catch(catch_input)
 
         elif 'wsR' in data:
             try:

@@ -45,6 +45,10 @@ for x in range(1,4):
 		break
 
 for x in range(1,4):
+	if os.system("sudo pip3 install -U pip setuptools wheel") == 0:
+		break
+
+for x in range(1,4):
 	if os.system("sudo apt-get install -y i2c-tools") == 0:
 		break
 
@@ -70,12 +74,12 @@ except:
 	print('try again')
 
 for x in range(1,4):
-	if os.system("sudo pip3 install -U pip setuptools wheel") == 0:
-		break
-
-for x in range(1,4):
 	if os.system("sudo pip3 install numpy") == 0:
 		break
+
+#for x in range(1,4):
+#	if os.system("sudo pip3 install opencv-python") == 0:
+#		break
 
 for x in range(1,4):
 	if os.system("sudo pip3 install opencv-contrib-python") == 0:
@@ -117,17 +121,18 @@ for x in range(1,4):
 	if os.system("git clone https://github.com/oblique/create_ap") == 0:
 		break
 
+path_get = str(search('//home/pi/','server.py'))
+path_get=path_get[:-15]
+path_get_2=path_get[:-7]
+
 try:
-	os.system("sudo cd //home/pi/adeept_awr/create_ap && sudo make install")
+	os.system("cd %screate_ap && sudo make install"%path_get_2)
 except:
 	pass
 
 for x in range(1,4):
 	if os.system("sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
 		break
-
-path_get = str(search('//home/pi/','server.py'))
-path_get=path_get[:-15]
 
 try:
 	try:

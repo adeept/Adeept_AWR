@@ -42,8 +42,9 @@ def camera_ang(direction, ang):
 		ang = 50
 	if look_direction:
 		if direction == 'lookdown':
-			org_pos+=ang
-			org_pos = ctrl_range(org_pos, look_max, look_min)
+			if org_pos < 300:
+				org_pos+=ang
+				org_pos = ctrl_range(org_pos, look_max, look_min)		
 		elif direction == 'lookup':
 			org_pos-=ang
 			org_pos = ctrl_range(org_pos, look_max, look_min)

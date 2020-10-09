@@ -45,3 +45,17 @@ class LED:
             self.strip.show()
             time.sleep(wait_ms/1000.0)
 
+if __name__ == '__main__':
+    while True:
+        led = LED()
+        try:
+            led.colorWipe(Color(255,0,0))
+            time.sleep(1)
+            led.colorWipe(Color(0,255,0))
+            time.sleep(1)
+            led.colorWipe(Color(0,0,255))
+            time.sleep(1)
+        except:
+            led.colorWipe(Color(0,0,0))
+
+

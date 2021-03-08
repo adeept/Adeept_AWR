@@ -177,16 +177,32 @@ class Functions(threading.Thread):
 
 
 	def automaticProcessing(self):
-		print('automaticProcessing')
+		# print('automaticProcessing')
+		global mark_automatic
+		# print('automaticProcessing')
 		if self.rangeKeep/3 > ultra.checkdist():
-			 move.move(100, 'backward', 'no', 0.5)
+			move.move(100, 'backward', 'no', 0.5)
+			if mark_automatic != 1:
+				# print(ultra.checkdist())
+				print("backward")
+				mark_automatic = 1
+
 		elif self.rangeKeep > ultra.checkdist():
 			move.move(100, 'no', 'left', 0.5)
+			if mark_automatic != 2:
+				# print(ultra.checkdist())
+				print("left")
 		else:
 			move.move(100, 'forward', 'no', 0.5)
+			if mark_automatic != 3:
+				# print(ultra.checkdist())
+				print("forward")
+				mark_automatic = 3
 		time.sleep(0.1)
 		if self.functionMode == 'none':
 			move.move(80, 'no', 'no', 0.5)
+			print("stop")
+
 
 
 	def steadyProcessing(self):

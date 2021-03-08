@@ -65,6 +65,8 @@ line_pin_right = 19
 line_pin_middle = 16
 line_pin_left = 20
 
+mark_automatic = 0
+
 def pwmGenOut(angleInput):
 	return int(round(23/9*angleInput))
 
@@ -177,7 +179,6 @@ class Functions(threading.Thread):
 
 
 	def automaticProcessing(self):
-		# print('automaticProcessing')
 		global mark_automatic
 		# print('automaticProcessing')
 		if self.rangeKeep/3 > ultra.checkdist():

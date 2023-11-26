@@ -29,7 +29,7 @@ left_backward = 1
 right_forward = 1
 right_backward= 0
 
-pwn_A = 0
+pwm_A = 0
 pwm_B = 0
 
 def motorStop():#Motor stops
